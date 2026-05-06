@@ -31,7 +31,6 @@
             --sombra-suave: 0 8px 32px rgba(0, 0, 0, 0.08);
             --sombra-media: 0 20px 50px rgba(0, 0, 0, 0.12);
             --sombra-dourada: 0 10px 40px rgba(200, 160, 82, 0.25);
-            --borda-dourada: 2px solid var(--dourado);
         }
 
         * {
@@ -306,8 +305,6 @@
             letter-spacing: 1px;
             transition: all 0.4s ease;
             box-shadow: var(--sombra-dourada);
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-gold:hover {
@@ -388,24 +385,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ========== SEÇÃO SOBRE ========== */
-        .section-sobre {
-            padding: 100px 0;
-            background: var(--branco);
-            position: relative;
-        }
-
-        .section-sobre::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
-            opacity: 0.6;
-        }
-
+        /* ========== SEÇÕES COMUNS ========== */
         .section-label {
             display: inline-block;
             font-size: 0.85rem;
@@ -433,6 +413,23 @@
             background: var(--dourado);
             margin-top: 12px;
             border-radius: 2px;
+        }
+
+        .section-sobre {
+            padding: 100px 0;
+            background: var(--branco);
+            position: relative;
+        }
+
+        .section-sobre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+            opacity: 0.6;
         }
 
         .sobre-texto {
@@ -587,7 +584,6 @@
         .section-contato {
             padding: 100px 0;
             background: var(--cinza-claro);
-            position: relative;
         }
 
         .contato-card {
@@ -744,6 +740,38 @@
             transform: scale(1.02);
         }
 
+        /* ========== SEÇÕES DE POLÍTICA E TERMOS (ÂNCORA) ========== */
+        .section-politica {
+            padding: 80px 0;
+            background: var(--cinza-claro);
+            border-top: 3px solid var(--dourado);
+        }
+
+        .section-politica .container {
+            max-width: 900px;
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .section-politica h5 {
+            color: var(--azul-profundo);
+            font-weight: 700;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section-politica a {
+            color: var(--dourado);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .section-politica a:hover {
+            text-decoration: underline;
+        }
+
         /* ========== FOOTER ========== */
         .footer {
             background: var(--azul-profundo);
@@ -776,7 +804,8 @@
             margin-bottom: 8px;
         }
 
-        .footer .footer-links a {
+        .footer .footer-links a,
+        .footer-bottom a {
             color: #8899aa;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -784,7 +813,8 @@
             cursor: pointer;
         }
 
-        .footer .footer-links a:hover {
+        .footer .footer-links a:hover,
+        .footer-bottom a:hover {
             color: var(--dourado);
         }
 
@@ -801,66 +831,6 @@
             color: var(--dourado);
             text-decoration: none;
             font-weight: 500;
-        }
-
-        .footer-bottom a {
-            color: #8899aa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--dourado);
-        }
-
-        /* ========== MODAIS ========== */
-        .modal-content {
-            background: var(--branco);
-            border-radius: 20px;
-            border: 1px solid rgba(200, 160, 82, 0.3);
-            box-shadow: var(--sombra-media);
-        }
-
-        .modal-header {
-            border-bottom: 1px solid rgba(200, 160, 82, 0.3);
-            background: linear-gradient(135deg, var(--azul-profundo) 0%, #0f2b3d 100%);
-            color: var(--dourado);
-            border-radius: 20px 20px 0 0;
-        }
-
-        .modal-header .btn-close {
-            filter: invert(1) brightness(200%);
-        }
-
-        .modal-title {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .modal-body {
-            color: #2c2c2c;
-            font-size: 0.95rem;
-            line-height: 1.8;
-            padding: 30px;
-        }
-
-        .modal-body h5 {
-            color: var(--azul-profundo);
-            font-weight: 700;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .modal-body a {
-            color: var(--dourado);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .modal-body a:hover {
-            text-decoration: underline;
         }
 
         /* ========== BOTÃO VOLTAR AO TOPO ========== */
@@ -897,7 +867,6 @@
             box-shadow: 0 16px 35px rgba(200, 160, 82, 0.5);
         }
 
-        /* ========== RESPONSIVIDADE ========== */
         @media (max-width: 992px) {
             .hero-title { font-size: 2.8rem; }
             .hero-title .gold-text { font-size: 2.4rem; }
@@ -929,12 +898,10 @@
 </head>
 <body>
 
-    <!-- ==================== NAVBAR ==================== -->
+    <!-- NAVBAR (idêntica) -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fa-solid fa-building-columns"></i> Hernandes Imobiliária
-            </a>
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-building-columns"></i> Hernandes Imobiliária</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -950,26 +917,17 @@
         </div>
     </nav>
 
-    <!-- ==================== HERO SECTION ==================== -->
+    <!-- HERO SECTION (idêntica) -->
     <section class="hero-section" id="home">
-        <img src="https://www.hernandez.com.br/assets/img/tmp/slide-bilbao.jpg" alt="Fundo arquitetônico" class="hero-bg-image"
-             onerror="this.style.display='none'">
-
+        <img src="https://www.hernandez.com.br/assets/img/tmp/slide-bilbao.jpg" alt="Fundo arquitetônico" class="hero-bg-image" onerror="this.style.display='none'">
         <div class="hero-particles">
             <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
             <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
         </div>
-        <div class="hero-glow"></div>
-        <div class="hero-glow-2"></div>
-
+        <div class="hero-glow"></div><div class="hero-glow-2"></div>
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <div class="hero-badge">
-                <i class="fa-solid fa-star"></i> Desde 2000 — 25+ Anos de História
-            </div>
-            <h1 class="hero-title">
-                Hernandes
-                <span class="gold-text">Imobiliária</span>
-            </h1>
+            <div class="hero-badge"><i class="fa-solid fa-star"></i> Desde 2000 — 25+ Anos de História</div>
+            <h1 class="hero-title">Hernandes <span class="gold-text">Imobiliária</span></h1>
             <p class="hero-subtitle">Hernandes Administradora de Bens Próprios LTDA</p>
             <p class="hero-tagline">Compra e venda de imóveis próprios — Tradição e confiança em Manaus/AM</p>
             <div class="hero-buttons">
@@ -977,71 +935,40 @@
                 <a href="#sobre" class="btn btn-outline-gold"><i class="fa-solid fa-arrow-down"></i> Conheça Mais</a>
             </div>
         </div>
-
         <div class="hero-scroll-indicator" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
             <span><i class="fa-solid fa-chevron-down"></i></span>
         </div>
     </section>
 
-    <!-- ==================== SEÇÃO SOBRE ==================== -->
+    <!-- SOBRE (idêntica) -->
     <section class="section-sobre" id="sobre">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
                     <span class="section-label"><i class="fa-solid fa-building me-1"></i> Nossa História</span>
                     <h2 class="section-title">Sobre a Hernandes Imobiliária</h2>
-                    <p class="sobre-texto">
-                        A <strong>Hernandes Imobiliária</strong>, com razão social <strong>Hernandes Administradora de Bens Próprios LTDA</strong>,
-                        foi fundada em <strong>26 de maio de 2000</strong> e já soma mais de <strong>25 anos de atuação</strong> no mercado
-                        imobiliário de Manaus, Amazonas. Nossa atividade principal, registrada junto à Receita Federal sob o código
-                        <strong>68.10-2-01</strong>, é a <strong>compra e venda de imóveis próprios</strong>.
-                    </p>
-                    <p class="sobre-texto">
-                        Com <strong>situação cadastral ATIVA</strong> e sede no Distrito Industrial I, construímos uma trajetória
-                        sólida pautada na transparência, ética e compromisso com cada cliente. Ao longo de mais de duas décadas,
-                        nos consolidamos como referência no segmento imobiliário da região Norte.
-                    </p>
-                    <p class="sobre-texto">
-                        <i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> CNPJ ativo e regularizado<br>
-                        <i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> Mais de 25 anos de experiência<br>
-                        <i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> Atendimento personalizado em Manaus/AM
-                    </p>
+                    <p class="sobre-texto">A <strong>Hernandes Imobiliária</strong>, com razão social <strong>Hernandes Administradora de Bens Próprios LTDA</strong>, foi fundada em <strong>26 de maio de 2000</strong> e já soma mais de <strong>25 anos de atuação</strong> no mercado imobiliário de Manaus, Amazonas. Nossa atividade principal, registrada junto à Receita Federal sob o código <strong>68.10-2-01</strong>, é a <strong>compra e venda de imóveis próprios</strong>.</p>
+                    <p class="sobre-texto">Com <strong>situação cadastral ATIVA</strong> e sede no Distrito Industrial I, construímos uma trajetória sólida pautada na transparência, ética e compromisso com cada cliente. Ao longo de mais de duas décadas, nos consolidamos como referência no segmento imobiliário da região Norte.</p>
+                    <p class="sobre-texto"><i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> CNPJ ativo e regularizado<br><i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> Mais de 25 anos de experiência<br><i class="fa-solid fa-check-circle" style="color: var(--dourado);"></i> Atendimento personalizado em Manaus/AM</p>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
-                    <img src="https://apto.vc/_next/image?url=https%3A%2F%2Fapi.apto.vc%2Fimages%2Frealties%2F11637%2Fresidencial-plazas-de-madrid-card-1.jpg&w=1920&q=70"
-                         alt="Imóvel referência" class="sobre-imagem mb-4"
-                         onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobiliária'">
+                    <img src="https://apto.vc/_next/image?url=https%3A%2F%2Fapi.apto.vc%2Fimages%2Frealties%2F11637%2Fresidencial-plazas-de-madrid-card-1.jpg&w=1920&q=70" alt="Imóvel referência" class="sobre-imagem mb-4" onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobiliária'">
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="sobre-card">
-                                <div class="icon-circle">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl3YrQPXyBX7ZvAU2EBt4kBAHf1FJt4GIT8Q&s"
-                                         alt="Ícone fundação" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-calendar-check\'></i>'">
-                                </div>
+                                <div class="icon-circle"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl3YrQPXyBX7ZvAU2EBt4kBAHf1FJt4GIT8Q&s" alt="Ícone fundação" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-calendar-check\'></i>'"></div>
                                 <h5>Fundação</h5>
                                 <p>26 de maio de 2000<br><small class="text-muted">25 anos, 11 meses e 11 dias</small></p>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="sobre-card">
-                                <div class="icon-circle"><i class="fa-solid fa-file-shield"></i></div>
-                                <h5>Situação</h5>
-                                <p><span class="badge bg-success fs-6 px-3 py-2">ATIVA</span><br><small class="text-muted">Cadastro regular</small></p>
-                            </div>
+                            <div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-file-shield"></i></div><h5>Situação</h5><p><span class="badge bg-success fs-6 px-3 py-2">ATIVA</span><br><small class="text-muted">Cadastro regular</small></p></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="sobre-card">
-                                <div class="icon-circle"><i class="fa-solid fa-briefcase"></i></div>
-                                <h5>Atividade Principal</h5>
-                                <p>68.10-2-01<br><small class="text-muted">Compra e venda de imóveis próprios</small></p>
-                            </div>
+                            <div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-briefcase"></i></div><h5>Atividade Principal</h5><p>68.10-2-01<br><small class="text-muted">Compra e venda de imóveis próprios</small></p></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="sobre-card">
-                                <div class="icon-circle"><i class="fa-solid fa-map-pin"></i></div>
-                                <h5>Sede</h5>
-                                <p>Distrito Industrial I<br><small class="text-muted">Manaus — Amazonas</small></p>
-                            </div>
+                            <div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-map-pin"></i></div><h5>Sede</h5><p>Distrito Industrial I<br><small class="text-muted">Manaus — Amazonas</small></p></div>
                         </div>
                     </div>
                 </div>
@@ -1049,137 +976,52 @@
         </div>
     </section>
 
-    <!-- ==================== SEÇÃO DADOS DA EMPRESA ==================== -->
+    <!-- DADOS (idêntica) -->
     <section class="section-dados" id="dados">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
                 <span class="section-label"><i class="fa-solid fa-database me-1"></i> Informações Oficiais</span>
                 <h2 class="section-title">Dados da Empresa</h2>
-                <p style="color: #8899aa; max-width: 600px; margin: 0 auto;">
-                    Confira abaixo todos os dados cadastrais da Hernandes Imobiliária conforme registros oficiais.
-                </p>
+                <p style="color: #8899aa; max-width: 600px; margin: 0 auto;">Confira abaixo todos os dados cadastrais da Hernandes Imobiliária conforme registros oficiais.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-fingerprint"></i></div>
-                        <h5>CNPJ</h5>
-                        <p class="dado-valor">03.838.437/0001-97</p>
-                        <small>03838437000197</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-file-signature"></i></div>
-                        <h5>Razão Social</h5>
-                        <p>Hernandes Administradora de Bens Próprios LTDA</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-store"></i></div>
-                        <h5>Nome Fantasia</h5>
-                        <p class="dado-valor" style="font-size: 1.3rem;">Hernandes Imobiliária</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                        <h5>Data de Abertura</h5>
-                        <p class="dado-valor">26/05/2000</p>
-                        <small>25 anos, 11 meses e 11 dias</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-code-branch"></i></div>
-                        <h5>CNAE (Receita Federal)</h5>
-                        <p class="dado-valor" style="font-size: 1.2rem;">68.10-2-01</p>
-                        <small>Compra e venda de imóveis próprios</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-circle-check"></i></div>
-                        <h5>Situação Cadastral</h5>
-                        <p class="dado-valor" style="color: #4ade80; font-size: 1.6rem;">ATIVA</p>
-                        <small>Cadastro regularizado</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                    <div class="dado-card">
-                        <div class="dado-icon"><i class="fa-solid fa-city"></i></div>
-                        <h5>Localidade</h5>
-                        <p class="dado-valor" style="font-size: 1.5rem;">Manaus</p>
-                        <small>Estado do Amazonas</small>
-                    </div>
-                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-fingerprint"></i></div><h5>CNPJ</h5><p class="dado-valor">03.838.437/0001-97</p><small>03838437000197</small></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-file-signature"></i></div><h5>Razão Social</h5><p>Hernandes Administradora de Bens Próprios LTDA</p></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-store"></i></div><h5>Nome Fantasia</h5><p class="dado-valor" style="font-size: 1.3rem;">Hernandes Imobiliária</p></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="450"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-calendar-days"></i></div><h5>Data de Abertura</h5><p class="dado-valor">26/05/2000</p><small>25 anos, 11 meses e 11 dias</small></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-code-branch"></i></div><h5>CNAE (Receita Federal)</h5><p class="dado-valor" style="font-size: 1.2rem;">68.10-2-01</p><small>Compra e venda de imóveis próprios</small></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-circle-check"></i></div><h5>Situação Cadastral</h5><p class="dado-valor" style="color: #4ade80; font-size: 1.6rem;">ATIVA</p><small>Cadastro regularizado</small></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400"><div class="dado-card"><div class="dado-icon"><i class="fa-solid fa-city"></i></div><h5>Localidade</h5><p class="dado-valor" style="font-size: 1.5rem;">Manaus</p><small>Estado do Amazonas</small></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SEÇÃO CONTATO ==================== -->
+    <!-- CONTATO (idêntica) -->
     <section class="section-contato" id="contato">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
                 <span class="section-label"><i class="fa-solid fa-address-book me-1"></i> Fale Conosco</span>
                 <h2 class="section-title">Canais de Contato</h2>
-                <p style="color: #4a5568; max-width: 600px; margin: 0 auto;">
-                    Estamos prontos para atendê-lo. Escolha o canal de sua preferência.
-                </p>
+                <p style="color: #4a5568; max-width: 600px; margin: 0 auto;">Estamos prontos para atendê-lo. Escolha o canal de sua preferência.</p>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
-                    <div class="contato-card">
-                        <div class="contato-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <h5>E-mail</h5>
-                        <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>
-                        <br>
-                        <a href="mailto:jose.pequeno@transhernandes.com.br" class="btn btn-sm btn-outline-secondary mt-3 rounded-pill">
-                            <i class="fa-solid fa-paper-plane me-1"></i> Enviar E-mail
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                    <div class="contato-card">
-                        <div class="contato-icon"><i class="fa-solid fa-phone"></i></div>
-                        <h5>Telefone Principal</h5>
-                        <a href="tel:+559221270001" class="telefone-destaque">(92) 2127-0001</a>
-                        <br>
-                        <a href="tel:+559221270001" class="btn btn-sm btn-gold mt-3 rounded-pill">
-                            <i class="fa-solid fa-phone me-1"></i> Ligar Agora
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                    <div class="contato-card">
-                        <div class="contato-icon"><i class="fa-solid fa-headset"></i></div>
-                        <h5>Outros Telefones</h5>
-                        <a href="tel:+559221270029" class="telefone-destaque">(92) 2127-0029</a><br>
-                        <a href="tel:+559221270007" class="telefone-destaque">(92) 2127-0007</a>
-                        <br><br>
-                        <small class="text-muted">Horário comercial</small>
-                    </div>
-                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0"><div class="contato-card"><div class="contato-icon"><i class="fa-solid fa-envelope"></i></div><h5>E-mail</h5><a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a><br><a href="mailto:jose.pequeno@transhernandes.com.br" class="btn btn-sm btn-outline-secondary mt-3 rounded-pill"><i class="fa-solid fa-paper-plane me-1"></i> Enviar E-mail</a></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200"><div class="contato-card"><div class="contato-icon"><i class="fa-solid fa-phone"></i></div><h5>Telefone Principal</h5><a href="tel:+559221270001" class="telefone-destaque">(92) 2127-0001</a><br><a href="tel:+559221270001" class="btn btn-sm btn-gold mt-3 rounded-pill"><i class="fa-solid fa-phone me-1"></i> Ligar Agora</a></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400"><div class="contato-card"><div class="contato-icon"><i class="fa-solid fa-headset"></i></div><h5>Outros Telefones</h5><a href="tel:+559221270029" class="telefone-destaque">(92) 2127-0029</a><br><a href="tel:+559221270007" class="telefone-destaque">(92) 2127-0007</a><br><br><small class="text-muted">Horário comercial</small></div></div>
             </div>
             <div class="text-center mt-5" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-                <a href="https://wa.me/559221270001?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Hernandes%20Imobili%C3%A1ria."
-                    target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-                    <i class="fa-brands fa-whatsapp fa-lg"></i> Atendimento via WhatsApp
-                </a>
+                <a href="https://wa.me/559221270001?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Hernandes%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer" class="whatsapp-btn"><i class="fa-brands fa-whatsapp fa-lg"></i> Atendimento via WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SEÇÃO LOCALIZAÇÃO ==================== -->
+    <!-- LOCALIZAÇÃO (idêntica) -->
     <section class="section-localizacao" id="localizacao">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
                 <span class="section-label"><i class="fa-solid fa-location-crosshairs me-1"></i> Onde Estamos</span>
                 <h2 class="section-title">Nossa Localização</h2>
-                <p style="color: #4a5568; max-width: 600px; margin: 0 auto;">
-                    Visite nossa sede no Distrito Industrial I, em Manaus.
-                </p>
+                <p style="color: #4a5568; max-width: 600px; margin: 0 auto;">Visite nossa sede no Distrito Industrial I, em Manaus.</p>
             </div>
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
@@ -1193,40 +1035,99 @@
                         <p><strong>Município:</strong> Manaus</p>
                         <p><strong>Estado:</strong> Amazonas</p>
                         <hr class="my-3" style="border-color: #dce3ea;">
-                        <p><small class="text-muted"><i class="fa-solid fa-envelope me-1"></i> <strong>Para correspondência:</strong><br>
-                                Hernandes Imobiliária — Hernandes Administradora de Bens Próprios LTDA<br>
-                                Avenida Guaruba, 787, Bloco A — Distrito Industrial I<br>
-                                Manaus/AM — CEP: 69075-080</small></p>
+                        <p><small class="text-muted"><i class="fa-solid fa-envelope me-1"></i> <strong>Para correspondência:</strong><br>Hernandes Imobiliária — Hernandes Administradora de Bens Próprios LTDA<br>Avenida Guaruba, 787, Bloco A — Distrito Industrial I<br>Manaus/AM — CEP: 69075-080</small></p>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
-                    <a href="https://www.google.com/maps/search/Avenida+Guaruba+787+Distrito+Industrial+I+Manaus+AM"
-                        target="_blank" rel="noopener noreferrer">
-                        <img src="https://media.licdn.com/dms/image/v2/C4D1BAQFeUZ8CdR-1cA/company-background_10000/company-background_10000/0/1583576134587/hernandez_consultoria_imobiliaria_cover?e=2147483647&v=beta&t=10fGGQ4hOEctITB5Mgv2XNVnTjU2IZx8VVd5-3SvsVI"
-                             alt="Hernandes Imobiliária - Localização"
-                             class="mapa-imagem"
-                             onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobili%C3%A1ria+-+Manaus/AM'">
+                    <a href="https://www.google.com/maps/search/Avenida+Guaruba+787+Distrito+Industrial+I+Manaus+AM" target="_blank" rel="noopener noreferrer">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D1BAQFeUZ8CdR-1cA/company-background_10000/company-background_10000/0/1583576134587/hernandez_consultoria_imobiliaria_cover?e=2147483647&v=beta&t=10fGGQ4hOEctITB5Mgv2XNVnTjU2IZx8VVd5-3SvsVI" alt="Hernandes Imobiliária - Localização" class="mapa-imagem" onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobili%C3%A1ria+-+Manaus/AM'">
                     </a>
-                    <p class="text-center mt-3">
-                        <small class="text-muted"><i class="fa-solid fa-map-pin me-1"></i> Clique na imagem para abrir o Google Maps</small>
-                    </p>
+                    <p class="text-center mt-3"><small class="text-muted"><i class="fa-solid fa-map-pin me-1"></i> Clique na imagem para abrir o Google Maps</small></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== SEÇÃO POLÍTICA DE PRIVACIDADE (ÂNCORA) ==================== -->
+    <section class="section-politica" id="privacidade">
+        <div class="container">
+            <h2 class="section-title mb-4">Política de Privacidade</h2>
+            <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
+            <p>A <strong>Hernandes Imobiliária</strong> (Hernandes Administradora de Bens Próprios LTDA, CNPJ 03.838.437/0001-97) leva a sua privacidade a sério. Esta política descreve como coletamos, usamos e protegemos suas informações pessoais ao utilizar nosso site e serviços.</p>
+
+            <h5>1. Dados coletados</h5>
+            <p>Coletamos apenas as informações que você nos fornece voluntariamente por meio de formulários de contato, e-mail ou WhatsApp, como nome, telefone e e-mail. Não coletamos dados automaticamente por cookies de rastreamento, exceto aqueles essenciais para o funcionamento do site.</p>
+
+            <h5>2. Finalidade do tratamento</h5>
+            <p>Seus dados são utilizados exclusivamente para:</p>
+            <ul>
+                <li>Responder a solicitações de contato e orçamentos;</li>
+                <li>Prestar informações sobre imóveis e serviços;</li>
+                <li>Cumprir obrigações legais e regulatórias.</li>
+            </ul>
+
+            <h5>3. Compartilhamento</h5>
+            <p>Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou mediante sua autorização expressa.</p>
+
+            <h5>4. Segurança</h5>
+            <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não autorizados, perda ou alteração. No entanto, nenhum sistema é 100% seguro; em caso de incidentes, notificaremos os afetados conforme a legislação aplicável.</p>
+
+            <h5>5. Seus direitos (LGPD)</h5>
+            <p>De acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem direito a:</p>
+            <ul>
+                <li>Confirmar a existência de tratamento de seus dados;</li>
+                <li>Acessar, corrigir ou excluir seus dados pessoais;</li>
+                <li>Revogar consentimentos e solicitar portabilidade.</li>
+            </ul>
+            <p>Para exercer seus direitos, entre em contato pelo e-mail <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>.</p>
+
+            <h5>6. Alterações</h5>
+            <p>Esta política pode ser atualizada periodicamente. Recomendamos a leitura regular. A data da última modificação estará sempre no topo do documento.</p>
+
+            <p class="mt-4"><em>Em caso de dúvidas, fale conosco pelos canais oficiais.</em></p>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO TERMOS DE USO (ÂNCORA) ==================== -->
+    <section class="section-politica" id="termos" style="background: var(--branco);">
+        <div class="container">
+            <h2 class="section-title mb-4">Termos de Uso</h2>
+            <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
+            <p>Bem-vindo ao site da <strong>Hernandes Imobiliária</strong>. Ao acessar e utilizar este site, você concorda com os termos abaixo. Caso não concorde, por favor, interrompa a navegação.</p>
+
+            <h5>1. Objeto</h5>
+            <p>Este site tem caráter informativo e apresenta a empresa, seus dados cadastrais e canais de contato. Nenhuma informação aqui contida constitui oferta vinculante de compra ou venda de imóveis.</p>
+
+            <h5>2. Propriedade intelectual</h5>
+            <p>Todo o conteúdo (textos, imagens, logotipos, ícones e design) é de propriedade da Hernandes Administradora de Bens Próprios LTDA ou licenciado por terceiros. É proibida a reprodução sem autorização prévia.</p>
+
+            <h5>3. Uso adequado</h5>
+            <p>Você se compromete a utilizar o site apenas para fins lícitos, não praticando atos que possam danificar, sobrecarregar ou desativar qualquer funcionalidade. É vedado o uso de robôs, scrapers ou qualquer meio automatizado para extrair dados.</p>
+
+            <h5>4. Links externos</h5>
+            <p>Este site pode conter links para serviços de terceiros (Google Maps, WhatsApp, etc.). Não nos responsabilizamos pelo conteúdo ou práticas de privacidade desses sites.</p>
+
+            <h5>5. Isenção de garantias</h5>
+            <p>As informações são fornecidas "como estão", sem garantias de disponibilidade contínua ou ausência de erros. A Hernandes Imobiliária não se responsabiliza por decisões tomadas com base no conteúdo do site.</p>
+
+            <h5>6. Privacidade</h5>
+            <p>O uso de dados pessoais é regido pela nossa <a href="#privacidade">Política de Privacidade</a>.</p>
+
+            <h5>7. Disposições gerais</h5>
+            <p>Estes termos são regidos pelas leis brasileiras. Qualquer disputa será dirimida no foro da comarca de Manaus/AM, com exclusão de qualquer outro.</p>
+            <p>Reservamo-nos o direito de modificar estes termos a qualquer momento, publicando a versão atualizada neste local.</p>
+
+            <p class="mt-4"><em>Para esclarecimentos, utilize nossos canais de contato.</em></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600">
                     <h5><i class="fa-solid fa-building-columns me-2"></i>Hernandes Imobiliária</h5>
-                    <p>
-                        Hernandes Administradora de Bens Próprios LTDA<br>
-                        CNPJ: 03.838.437/0001-97<br>
-                        Fundada em 26 de maio de 2000<br>
-                        <strong style="color: #4ade80;">Situação: ATIVA</strong>
-                    </p>
+                    <p>Hernandes Administradora de Bens Próprios LTDA<br>CNPJ: 03.838.437/0001-97<br>Fundada em 26 de maio de 2000<br><strong style="color: #4ade80;">Situação: ATIVA</strong></p>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                     <h5><i class="fa-solid fa-link me-2"></i>Links Rápidos</h5>
@@ -1240,131 +1141,26 @@
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
                     <h5><i class="fa-solid fa-clock me-2"></i>Atividade</h5>
-                    <p>
-                        <strong>CNAE:</strong> 68.10-2-01<br>
-                        Compra e venda de imóveis próprios<br>
-                        Atendimento em Manaus/AM<br>
-                        Distrito Industrial I
-                    </p>
+                    <p><strong>CNAE:</strong> 68.10-2-01<br>Compra e venda de imóveis próprios<br>Atendimento em Manaus/AM<br>Distrito Industrial I</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="mb-2">
-                    &copy; 2000 – <span id="ano-atual"></span> <span class="gold-link">Hernandes Imobiliária</span> —
-                    Hernandes Administradora de Bens Próprios LTDA. Todos os direitos reservados.
-                </p>
+                <p class="mb-2">&copy; 2000 – <span id="ano-atual"></span> <span class="gold-link">Hernandes Imobiliária</span> — Hernandes Administradora de Bens Próprios LTDA. Todos os direitos reservados.</p>
                 <p class="mb-0">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidade" class="me-3">
-                        <i class="fa-solid fa-shield-halved me-1"></i> Política de Privacidade
-                    </a>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalTermos">
-                        <i class="fa-solid fa-file-contract me-1"></i> Termos de Uso
-                    </a>
+                    <a href="#privacidade" class="me-3"><i class="fa-solid fa-shield-halved me-1"></i> Política de Privacidade</a>
+                    <a href="#termos"><i class="fa-solid fa-file-contract me-1"></i> Termos de Uso</a>
                 </p>
                 <p class="mt-1"><small>CNPJ: 03.838.437/0001-97 | Manaus — Amazonas | Brasil</small></p>
             </div>
         </div>
     </footer>
 
-    <!-- ==================== MODAL POLÍTICA DE PRIVACIDADE ==================== -->
-    <div class="modal fade" id="modalPrivacidade" tabindex="-1" aria-labelledby="modalPrivacidadeLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalPrivacidadeLabel"><i class="fa-solid fa-shield-halved me-2"></i>Política de Privacidade</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
-                    <p>A <strong>Hernandes Imobiliária</strong> (Hernandes Administradora de Bens Próprios LTDA, CNPJ 03.838.437/0001-97) leva a sua privacidade a sério. Esta política descreve como coletamos, usamos e protegemos suas informações pessoais ao utilizar nosso site e serviços.</p>
-
-                    <h5>1. Dados coletados</h5>
-                    <p>Coletamos apenas as informações que você nos fornece voluntariamente por meio de formulários de contato, e-mail ou WhatsApp, como nome, telefone e e-mail. Não coletamos dados automaticamente por cookies de rastreamento, exceto aqueles essenciais para o funcionamento do site.</p>
-
-                    <h5>2. Finalidade do tratamento</h5>
-                    <p>Seus dados são utilizados exclusivamente para:</p>
-                    <ul>
-                        <li>Responder a solicitações de contato e orçamentos;</li>
-                        <li>Prestar informações sobre imóveis e serviços;</li>
-                        <li>Cumprir obrigações legais e regulatórias.</li>
-                    </ul>
-
-                    <h5>3. Compartilhamento</h5>
-                    <p>Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou mediante sua autorização expressa.</p>
-
-                    <h5>4. Segurança</h5>
-                    <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não autorizados, perda ou alteração. No entanto, nenhum sistema é 100% seguro; em caso de incidentes, notificaremos os afetados conforme a legislação aplicável.</p>
-
-                    <h5>5. Seus direitos (LGPD)</h5>
-                    <p>De acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem direito a:</p>
-                    <ul>
-                        <li>Confirmar a existência de tratamento de seus dados;</li>
-                        <li>Acessar, corrigir ou excluir seus dados pessoais;</li>
-                        <li>Revogar consentimentos e solicitar portabilidade.</li>
-                    </ul>
-                    <p>Para exercer seus direitos, entre em contato pelo e-mail <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>.</p>
-
-                    <h5>6. Alterações</h5>
-                    <p>Esta política pode ser atualizada periodicamente. Recomendamos a leitura regular. A data da última modificação estará sempre no topo do documento.</p>
-
-                    <p class="mt-4"><em>Em caso de dúvidas, fale conosco pelos canais oficiais.</em></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Entendi</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== MODAL TERMOS DE USO ==================== -->
-    <div class="modal fade" id="modalTermos" tabindex="-1" aria-labelledby="modalTermosLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTermosLabel"><i class="fa-solid fa-file-contract me-2"></i>Termos de Uso</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
-                    <p>Bem-vindo ao site da <strong>Hernandes Imobiliária</strong>. Ao acessar e utilizar este site, você concorda com os termos abaixo. Caso não concorde, por favor, interrompa a navegação.</p>
-
-                    <h5>1. Objeto</h5>
-                    <p>Este site tem caráter informativo e apresenta a empresa, seus dados cadastrais e canais de contato. Nenhuma informação aqui contida constitui oferta vinculante de compra ou venda de imóveis.</p>
-
-                    <h5>2. Propriedade intelectual</h5>
-                    <p>Todo o conteúdo (textos, imagens, logotipos, ícones e design) é de propriedade da Hernandes Administradora de Bens Próprios LTDA ou licenciado por terceiros. É proibida a reprodução sem autorização prévia.</p>
-
-                    <h5>3. Uso adequado</h5>
-                    <p>Você se compromete a utilizar o site apenas para fins lícitos, não praticando atos que possam danificar, sobrecarregar ou desativar qualquer funcionalidade. É vedado o uso de robôs, scrapers ou qualquer meio automatizado para extrair dados.</p>
-
-                    <h5>4. Links externos</h5>
-                    <p>Este site pode conter links para serviços de terceiros (Google Maps, WhatsApp, etc.). Não nos responsabilizamos pelo conteúdo ou práticas de privacidade desses sites.</p>
-
-                    <h5>5. Isenção de garantias</h5>
-                    <p>As informações são fornecidas "como estão", sem garantias de disponibilidade contínua ou ausência de erros. A Hernandes Imobiliária não se responsabiliza por decisões tomadas com base no conteúdo do site.</p>
-
-                    <h5>6. Privacidade</h5>
-                    <p>O uso de dados pessoais é regido pela nossa <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidade" data-bs-dismiss="modal">Política de Privacidade</a>.</p>
-
-                    <h5>7. Disposições gerais</h5>
-                    <p>Estes termos são regidos pelas leis brasileiras. Qualquer disputa será dirimida no foro da comarca de Manaus/AM, com exclusão de qualquer outro.</p>
-                    <p>Reservamo-nos o direito de modificar estes termos a qualquer momento, publicando a versão atualizada neste local.</p>
-
-                    <p class="mt-4"><em>Para esclarecimentos, utilize nossos canais de contato.</em></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Concordo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Botão Voltar ao Topo -->
     <button class="btn-voltar-topo" id="btnVoltarTopo" title="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Bootstrap 5 JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1407,18 +1203,6 @@
                 if (window.innerWidth < 992) bsCollapse.hide();
             });
         });
-
-        // Corrige referência cruzada entre modais (fechar um e abrir outro)
-        const modalPrivacidade = document.getElementById('modalPrivacidade');
-        const modalTermos = document.getElementById('modalTermos');
-        if (modalPrivacidade && modalTermos) {
-            modalPrivacidade.addEventListener('hidden.bs.modal', function () {
-                // Remove backdrop residual se houver
-                document.body.classList.remove('modal-open');
-                const backdrops = document.querySelectorAll('.modal-backdrop');
-                backdrops.forEach(b => b.remove());
-            });
-        }
     </script>
 </body>
 </html>
