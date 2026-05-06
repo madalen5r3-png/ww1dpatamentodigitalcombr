@@ -740,35 +740,53 @@
             transform: scale(1.02);
         }
 
-        /* ========== SEÇÕES DE POLÍTICA E TERMOS (ÂNCORA) ========== */
-        .section-politica {
-            padding: 80px 0;
-            background: var(--cinza-claro);
-            border-top: 3px solid var(--dourado);
-        }
-
-        .section-politica .container {
-            max-width: 900px;
+        /* ========== MODAIS ========== */
+        .modal-content {
             background: var(--branco);
             border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--sombra-suave);
+            border: 1px solid rgba(200, 160, 82, 0.3);
+            box-shadow: var(--sombra-media);
         }
 
-        .section-politica h5 {
+        .modal-header {
+            border-bottom: 1px solid rgba(200, 160, 82, 0.3);
+            background: linear-gradient(135deg, var(--azul-profundo) 0%, #0f2b3d 100%);
+            color: var(--dourado);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) brightness(200%);
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-body {
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            padding: 30px;
+        }
+
+        .modal-body h5 {
             color: var(--azul-profundo);
             font-weight: 700;
-            margin-top: 24px;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
 
-        .section-politica a {
+        .modal-body a {
             color: var(--dourado);
             text-decoration: none;
             font-weight: 500;
         }
 
-        .section-politica a:hover {
+        .modal-body a:hover {
             text-decoration: underline;
         }
 
@@ -898,7 +916,7 @@
 </head>
 <body>
 
-    <!-- NAVBAR (idêntica) -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fa-solid fa-building-columns"></i> Hernandes Imobiliária</a>
@@ -917,7 +935,7 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (idêntica) -->
+    <!-- HERO SECTION -->
     <section class="hero-section" id="home">
         <img src="https://www.hernandez.com.br/assets/img/tmp/slide-bilbao.jpg" alt="Fundo arquitetônico" class="hero-bg-image" onerror="this.style.display='none'">
         <div class="hero-particles">
@@ -940,7 +958,7 @@
         </div>
     </section>
 
-    <!-- SOBRE (idêntica) -->
+    <!-- SOBRE -->
     <section class="section-sobre" id="sobre">
         <div class="container">
             <div class="row align-items-center g-5">
@@ -961,22 +979,16 @@
                                 <p>26 de maio de 2000<br><small class="text-muted">25 anos, 11 meses e 11 dias</small></p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-file-shield"></i></div><h5>Situação</h5><p><span class="badge bg-success fs-6 px-3 py-2">ATIVA</span><br><small class="text-muted">Cadastro regular</small></p></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-briefcase"></i></div><h5>Atividade Principal</h5><p>68.10-2-01<br><small class="text-muted">Compra e venda de imóveis próprios</small></p></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-map-pin"></i></div><h5>Sede</h5><p>Distrito Industrial I<br><small class="text-muted">Manaus — Amazonas</small></p></div>
-                        </div>
+                        <div class="col-md-6"><div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-file-shield"></i></div><h5>Situação</h5><p><span class="badge bg-success fs-6 px-3 py-2">ATIVA</span><br><small class="text-muted">Cadastro regular</small></p></div></div>
+                        <div class="col-md-6"><div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-briefcase"></i></div><h5>Atividade Principal</h5><p>68.10-2-01<br><small class="text-muted">Compra e venda de imóveis próprios</small></p></div></div>
+                        <div class="col-md-6"><div class="sobre-card"><div class="icon-circle"><i class="fa-solid fa-map-pin"></i></div><h5>Sede</h5><p>Distrito Industrial I<br><small class="text-muted">Manaus — Amazonas</small></p></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DADOS (idêntica) -->
+    <!-- DADOS -->
     <section class="section-dados" id="dados">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
@@ -996,7 +1008,7 @@
         </div>
     </section>
 
-    <!-- CONTATO (idêntica) -->
+    <!-- CONTATO -->
     <section class="section-contato" id="contato">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
@@ -1015,7 +1027,7 @@
         </div>
     </section>
 
-    <!-- LOCALIZAÇÃO (idêntica) -->
+    <!-- LOCALIZAÇÃO -->
     <section class="section-localizacao" id="localizacao">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
@@ -1048,79 +1060,6 @@
         </div>
     </section>
 
-    <!-- ==================== SEÇÃO POLÍTICA DE PRIVACIDADE (ÂNCORA) ==================== -->
-    <section class="section-politica" id="privacidade">
-        <div class="container">
-            <h2 class="section-title mb-4">Política de Privacidade</h2>
-            <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
-            <p>A <strong>Hernandes Imobiliária</strong> (Hernandes Administradora de Bens Próprios LTDA, CNPJ 03.838.437/0001-97) leva a sua privacidade a sério. Esta política descreve como coletamos, usamos e protegemos suas informações pessoais ao utilizar nosso site e serviços.</p>
-
-            <h5>1. Dados coletados</h5>
-            <p>Coletamos apenas as informações que você nos fornece voluntariamente por meio de formulários de contato, e-mail ou WhatsApp, como nome, telefone e e-mail. Não coletamos dados automaticamente por cookies de rastreamento, exceto aqueles essenciais para o funcionamento do site.</p>
-
-            <h5>2. Finalidade do tratamento</h5>
-            <p>Seus dados são utilizados exclusivamente para:</p>
-            <ul>
-                <li>Responder a solicitações de contato e orçamentos;</li>
-                <li>Prestar informações sobre imóveis e serviços;</li>
-                <li>Cumprir obrigações legais e regulatórias.</li>
-            </ul>
-
-            <h5>3. Compartilhamento</h5>
-            <p>Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou mediante sua autorização expressa.</p>
-
-            <h5>4. Segurança</h5>
-            <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não autorizados, perda ou alteração. No entanto, nenhum sistema é 100% seguro; em caso de incidentes, notificaremos os afetados conforme a legislação aplicável.</p>
-
-            <h5>5. Seus direitos (LGPD)</h5>
-            <p>De acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem direito a:</p>
-            <ul>
-                <li>Confirmar a existência de tratamento de seus dados;</li>
-                <li>Acessar, corrigir ou excluir seus dados pessoais;</li>
-                <li>Revogar consentimentos e solicitar portabilidade.</li>
-            </ul>
-            <p>Para exercer seus direitos, entre em contato pelo e-mail <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>.</p>
-
-            <h5>6. Alterações</h5>
-            <p>Esta política pode ser atualizada periodicamente. Recomendamos a leitura regular. A data da última modificação estará sempre no topo do documento.</p>
-
-            <p class="mt-4"><em>Em caso de dúvidas, fale conosco pelos canais oficiais.</em></p>
-        </div>
-    </section>
-
-    <!-- ==================== SEÇÃO TERMOS DE USO (ÂNCORA) ==================== -->
-    <section class="section-politica" id="termos" style="background: var(--branco);">
-        <div class="container">
-            <h2 class="section-title mb-4">Termos de Uso</h2>
-            <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
-            <p>Bem-vindo ao site da <strong>Hernandes Imobiliária</strong>. Ao acessar e utilizar este site, você concorda com os termos abaixo. Caso não concorde, por favor, interrompa a navegação.</p>
-
-            <h5>1. Objeto</h5>
-            <p>Este site tem caráter informativo e apresenta a empresa, seus dados cadastrais e canais de contato. Nenhuma informação aqui contida constitui oferta vinculante de compra ou venda de imóveis.</p>
-
-            <h5>2. Propriedade intelectual</h5>
-            <p>Todo o conteúdo (textos, imagens, logotipos, ícones e design) é de propriedade da Hernandes Administradora de Bens Próprios LTDA ou licenciado por terceiros. É proibida a reprodução sem autorização prévia.</p>
-
-            <h5>3. Uso adequado</h5>
-            <p>Você se compromete a utilizar o site apenas para fins lícitos, não praticando atos que possam danificar, sobrecarregar ou desativar qualquer funcionalidade. É vedado o uso de robôs, scrapers ou qualquer meio automatizado para extrair dados.</p>
-
-            <h5>4. Links externos</h5>
-            <p>Este site pode conter links para serviços de terceiros (Google Maps, WhatsApp, etc.). Não nos responsabilizamos pelo conteúdo ou práticas de privacidade desses sites.</p>
-
-            <h5>5. Isenção de garantias</h5>
-            <p>As informações são fornecidas "como estão", sem garantias de disponibilidade contínua ou ausência de erros. A Hernandes Imobiliária não se responsabiliza por decisões tomadas com base no conteúdo do site.</p>
-
-            <h5>6. Privacidade</h5>
-            <p>O uso de dados pessoais é regido pela nossa <a href="#privacidade">Política de Privacidade</a>.</p>
-
-            <h5>7. Disposições gerais</h5>
-            <p>Estes termos são regidos pelas leis brasileiras. Qualquer disputa será dirimida no foro da comarca de Manaus/AM, com exclusão de qualquer outro.</p>
-            <p>Reservamo-nos o direito de modificar estes termos a qualquer momento, publicando a versão atualizada neste local.</p>
-
-            <p class="mt-4"><em>Para esclarecimentos, utilize nossos canais de contato.</em></p>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
@@ -1147,13 +1086,106 @@
             <div class="footer-bottom">
                 <p class="mb-2">&copy; 2000 – <span id="ano-atual"></span> <span class="gold-link">Hernandes Imobiliária</span> — Hernandes Administradora de Bens Próprios LTDA. Todos os direitos reservados.</p>
                 <p class="mb-0">
-                    <a href="#privacidade" class="me-3"><i class="fa-solid fa-shield-halved me-1"></i> Política de Privacidade</a>
-                    <a href="#termos"><i class="fa-solid fa-file-contract me-1"></i> Termos de Uso</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidade" class="me-3"><i class="fa-solid fa-shield-halved me-1"></i> Política de Privacidade</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalTermos"><i class="fa-solid fa-file-contract me-1"></i> Termos de Uso</a>
                 </p>
                 <p class="mt-1"><small>CNPJ: 03.838.437/0001-97 | Manaus — Amazonas | Brasil</small></p>
             </div>
         </div>
     </footer>
+
+    <!-- ==================== MODAL POLÍTICA DE PRIVACIDADE ==================== -->
+    <div class="modal fade" id="modalPrivacidade" tabindex="-1" aria-labelledby="modalPrivacidadeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPrivacidadeLabel"><i class="fa-solid fa-shield-halved me-2"></i>Política de Privacidade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
+                    <p>A <strong>Hernandes Imobiliária</strong> (Hernandes Administradora de Bens Próprios LTDA, CNPJ 03.838.437/0001-97) leva a sua privacidade a sério. Esta política descreve como coletamos, usamos e protegemos suas informações pessoais ao utilizar nosso site e serviços.</p>
+
+                    <h5>1. Dados coletados</h5>
+                    <p>Coletamos apenas as informações que você nos fornece voluntariamente por meio de formulários de contato, e-mail ou WhatsApp, como nome, telefone e e-mail. Não coletamos dados automaticamente por cookies de rastreamento, exceto aqueles essenciais para o funcionamento do site.</p>
+
+                    <h5>2. Finalidade do tratamento</h5>
+                    <p>Seus dados são utilizados exclusivamente para:</p>
+                    <ul>
+                        <li>Responder a solicitações de contato e orçamentos;</li>
+                        <li>Prestar informações sobre imóveis e serviços;</li>
+                        <li>Cumprir obrigações legais e regulatórias.</li>
+                    </ul>
+
+                    <h5>3. Compartilhamento</h5>
+                    <p>Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou mediante sua autorização expressa.</p>
+
+                    <h5>4. Segurança</h5>
+                    <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não autorizados, perda ou alteração. No entanto, nenhum sistema é 100% seguro; em caso de incidentes, notificaremos os afetados conforme a legislação aplicável.</p>
+
+                    <h5>5. Seus direitos (LGPD)</h5>
+                    <p>De acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem direito a:</p>
+                    <ul>
+                        <li>Confirmar a existência de tratamento de seus dados;</li>
+                        <li>Acessar, corrigir ou excluir seus dados pessoais;</li>
+                        <li>Revogar consentimentos e solicitar portabilidade.</li>
+                    </ul>
+                    <p>Para exercer seus direitos, entre em contato pelo e-mail <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>.</p>
+
+                    <h5>6. Alterações</h5>
+                    <p>Esta política pode ser atualizada periodicamente. Recomendamos a leitura regular. A data da última modificação estará sempre no topo do documento.</p>
+
+                    <p class="mt-4"><em>Em caso de dúvidas, fale conosco pelos canais oficiais.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Entendi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL TERMOS DE USO ==================== -->
+    <div class="modal fade" id="modalTermos" tabindex="-1" aria-labelledby="modalTermosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTermosLabel"><i class="fa-solid fa-file-contract me-2"></i>Termos de Uso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
+                    <p>Bem-vindo ao site da <strong>Hernandes Imobiliária</strong>. Ao acessar e utilizar este site, você concorda com os termos abaixo. Caso não concorde, por favor, interrompa a navegação.</p>
+
+                    <h5>1. Objeto</h5>
+                    <p>Este site tem caráter informativo e apresenta a empresa, seus dados cadastrais e canais de contato. Nenhuma informação aqui contida constitui oferta vinculante de compra ou venda de imóveis.</p>
+
+                    <h5>2. Propriedade intelectual</h5>
+                    <p>Todo o conteúdo (textos, imagens, logotipos, ícones e design) é de propriedade da Hernandes Administradora de Bens Próprios LTDA ou licenciado por terceiros. É proibida a reprodução sem autorização prévia.</p>
+
+                    <h5>3. Uso adequado</h5>
+                    <p>Você se compromete a utilizar o site apenas para fins lícitos, não praticando atos que possam danificar, sobrecarregar ou desativar qualquer funcionalidade. É vedado o uso de robôs, scrapers ou qualquer meio automatizado para extrair dados.</p>
+
+                    <h5>4. Links externos</h5>
+                    <p>Este site pode conter links para serviços de terceiros (Google Maps, WhatsApp, etc.). Não nos responsabilizamos pelo conteúdo ou práticas de privacidade desses sites.</p>
+
+                    <h5>5. Isenção de garantias</h5>
+                    <p>As informações são fornecidas "como estão", sem garantias de disponibilidade contínua ou ausência de erros. A Hernandes Imobiliária não se responsabiliza por decisões tomadas com base no conteúdo do site.</p>
+
+                    <h5>6. Privacidade</h5>
+                    <p>O uso de dados pessoais é regido pela nossa <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidade" data-bs-dismiss="modal">Política de Privacidade</a>.</p>
+
+                    <h5>7. Disposições gerais</h5>
+                    <p>Estes termos são regidos pelas leis brasileiras. Qualquer disputa será dirimida no foro da comarca de Manaus/AM, com exclusão de qualquer outro.</p>
+                    <p>Reservamo-nos o direito de modificar estes termos a qualquer momento, publicando a versão atualizada neste local.</p>
+
+                    <p class="mt-4"><em>Para esclarecimentos, utilize nossos canais de contato.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Concordo</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Botão Voltar ao Topo -->
     <button class="btn-voltar-topo" id="btnVoltarTopo" title="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
@@ -1203,6 +1235,17 @@
                 if (window.innerWidth < 992) bsCollapse.hide();
             });
         });
+
+        // Corrige referência cruzada entre modais (fechar um e abrir outro)
+        const modalPrivacidade = document.getElementById('modalPrivacidade');
+        const modalTermos = document.getElementById('modalTermos');
+        if (modalPrivacidade && modalTermos) {
+            modalPrivacidade.addEventListener('hidden.bs.modal', function () {
+                document.body.classList.remove('modal-open');
+                const backdrops = document.querySelectorAll('.modal-backdrop');
+                backdrops.forEach(b => b.remove());
+            });
+        }
     </script>
 </body>
 </html>
