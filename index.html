@@ -146,7 +146,6 @@
             padding-top: 80px;
         }
 
-        /* Nova imagem de fundo no hero (slide-bilbao) */
         .hero-bg-image {
             position: absolute;
             top: 0;
@@ -160,7 +159,6 @@
             filter: brightness(0.7) saturate(0.8);
         }
 
-        /* Partículas decorativas */
         .hero-particles {
             position: absolute;
             top: 0;
@@ -469,7 +467,7 @@
             margin-bottom: 16px;
             font-size: 1.5rem;
             color: var(--dourado);
-            overflow: hidden; /* para conter a imagem thumbnail */
+            overflow: hidden;
         }
 
         .sobre-card .icon-circle img {
@@ -490,7 +488,6 @@
             margin-bottom: 0;
         }
 
-        /* Imagem na seção sobre (apto.vc) */
         .sobre-imagem {
             border-radius: 20px;
             box-shadow: var(--sombra-media);
@@ -729,7 +726,6 @@
             margin-top: 8px;
         }
 
-        /* Substituição do placeholder do mapa pela imagem do LinkedIn */
         .mapa-imagem {
             width: 100%;
             height: 100%;
@@ -785,6 +781,7 @@
             text-decoration: none;
             transition: color 0.3s ease;
             font-size: 0.9rem;
+            cursor: pointer;
         }
 
         .footer .footer-links a:hover {
@@ -804,6 +801,66 @@
             color: var(--dourado);
             text-decoration: none;
             font-weight: 500;
+        }
+
+        .footer-bottom a {
+            color: #8899aa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--dourado);
+        }
+
+        /* ========== MODAIS ========== */
+        .modal-content {
+            background: var(--branco);
+            border-radius: 20px;
+            border: 1px solid rgba(200, 160, 82, 0.3);
+            box-shadow: var(--sombra-media);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(200, 160, 82, 0.3);
+            background: linear-gradient(135deg, var(--azul-profundo) 0%, #0f2b3d 100%);
+            color: var(--dourado);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) brightness(200%);
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-body {
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            padding: 30px;
+        }
+
+        .modal-body h5 {
+            color: var(--azul-profundo);
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body a {
+            color: var(--dourado);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .modal-body a:hover {
+            text-decoration: underline;
         }
 
         /* ========== BOTÃO VOLTAR AO TOPO ========== */
@@ -895,11 +952,9 @@
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero-section" id="home">
-        <!-- Imagem de fundo (slide-bilbao) -->
         <img src="https://www.hernandez.com.br/assets/img/tmp/slide-bilbao.jpg" alt="Fundo arquitetônico" class="hero-bg-image"
              onerror="this.style.display='none'">
 
-        <!-- Partículas -->
         <div class="hero-particles">
             <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
             <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
@@ -953,7 +1008,6 @@
                     </p>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
-                    <!-- Imagem ilustrativa (apto.vc) -->
                     <img src="https://apto.vc/_next/image?url=https%3A%2F%2Fapi.apto.vc%2Fimages%2Frealties%2F11637%2Fresidencial-plazas-de-madrid-card-1.jpg&w=1920&q=70"
                          alt="Imóvel referência" class="sobre-imagem mb-4"
                          onerror="this.src='https://placehold.co/600x400/0a1e2f/c8a052?text=Hernandes+Imobiliária'">
@@ -961,7 +1015,6 @@
                         <div class="col-md-6">
                             <div class="sobre-card">
                                 <div class="icon-circle">
-                                    <!-- Thumbnail Google como ícone decorativo -->
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl3YrQPXyBX7ZvAU2EBt4kBAHf1FJt4GIT8Q&s"
                                          alt="Ícone fundação" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-calendar-check\'></i>'">
                                 </div>
@@ -1147,7 +1200,6 @@
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
-                    <!-- Imagem corporativa (LinkedIn) no lugar do mapa -->
                     <a href="https://www.google.com/maps/search/Avenida+Guaruba+787+Distrito+Industrial+I+Manaus+AM"
                         target="_blank" rel="noopener noreferrer">
                         <img src="https://media.licdn.com/dms/image/v2/C4D1BAQFeUZ8CdR-1cA/company-background_10000/company-background_10000/0/1583576134587/hernandez_consultoria_imobiliaria_cover?e=2147483647&v=beta&t=10fGGQ4hOEctITB5Mgv2XNVnTjU2IZx8VVd5-3SvsVI"
@@ -1197,14 +1249,115 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="mb-0">
+                <p class="mb-2">
                     &copy; 2000 – <span id="ano-atual"></span> <span class="gold-link">Hernandes Imobiliária</span> —
-                    Hernandes Administradora de Bens Próprios LTDA. Todos os direitos reservados.<br>
-                    <small>CNPJ: 03.838.437/0001-97 | Manaus — Amazonas | Brasil</small>
+                    Hernandes Administradora de Bens Próprios LTDA. Todos os direitos reservados.
                 </p>
+                <p class="mb-0">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidade" class="me-3">
+                        <i class="fa-solid fa-shield-halved me-1"></i> Política de Privacidade
+                    </a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalTermos">
+                        <i class="fa-solid fa-file-contract me-1"></i> Termos de Uso
+                    </a>
+                </p>
+                <p class="mt-1"><small>CNPJ: 03.838.437/0001-97 | Manaus — Amazonas | Brasil</small></p>
             </div>
         </div>
     </footer>
+
+    <!-- ==================== MODAL POLÍTICA DE PRIVACIDADE ==================== -->
+    <div class="modal fade" id="modalPrivacidade" tabindex="-1" aria-labelledby="modalPrivacidadeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPrivacidadeLabel"><i class="fa-solid fa-shield-halved me-2"></i>Política de Privacidade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
+                    <p>A <strong>Hernandes Imobiliária</strong> (Hernandes Administradora de Bens Próprios LTDA, CNPJ 03.838.437/0001-97) leva a sua privacidade a sério. Esta política descreve como coletamos, usamos e protegemos suas informações pessoais ao utilizar nosso site e serviços.</p>
+
+                    <h5>1. Dados coletados</h5>
+                    <p>Coletamos apenas as informações que você nos fornece voluntariamente por meio de formulários de contato, e-mail ou WhatsApp, como nome, telefone e e-mail. Não coletamos dados automaticamente por cookies de rastreamento, exceto aqueles essenciais para o funcionamento do site.</p>
+
+                    <h5>2. Finalidade do tratamento</h5>
+                    <p>Seus dados são utilizados exclusivamente para:</p>
+                    <ul>
+                        <li>Responder a solicitações de contato e orçamentos;</li>
+                        <li>Prestar informações sobre imóveis e serviços;</li>
+                        <li>Cumprir obrigações legais e regulatórias.</li>
+                    </ul>
+
+                    <h5>3. Compartilhamento</h5>
+                    <p>Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou mediante sua autorização expressa.</p>
+
+                    <h5>4. Segurança</h5>
+                    <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não autorizados, perda ou alteração. No entanto, nenhum sistema é 100% seguro; em caso de incidentes, notificaremos os afetados conforme a legislação aplicável.</p>
+
+                    <h5>5. Seus direitos (LGPD)</h5>
+                    <p>De acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem direito a:</p>
+                    <ul>
+                        <li>Confirmar a existência de tratamento de seus dados;</li>
+                        <li>Acessar, corrigir ou excluir seus dados pessoais;</li>
+                        <li>Revogar consentimentos e solicitar portabilidade.</li>
+                    </ul>
+                    <p>Para exercer seus direitos, entre em contato pelo e-mail <a href="mailto:jose.pequeno@transhernandes.com.br">jose.pequeno@transhernandes.com.br</a>.</p>
+
+                    <h5>6. Alterações</h5>
+                    <p>Esta política pode ser atualizada periodicamente. Recomendamos a leitura regular. A data da última modificação estará sempre no topo do documento.</p>
+
+                    <p class="mt-4"><em>Em caso de dúvidas, fale conosco pelos canais oficiais.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Entendi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL TERMOS DE USO ==================== -->
+    <div class="modal fade" id="modalTermos" tabindex="-1" aria-labelledby="modalTermosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTermosLabel"><i class="fa-solid fa-file-contract me-2"></i>Termos de Uso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Última atualização:</strong> 26 de maio de 2026</p>
+                    <p>Bem-vindo ao site da <strong>Hernandes Imobiliária</strong>. Ao acessar e utilizar este site, você concorda com os termos abaixo. Caso não concorde, por favor, interrompa a navegação.</p>
+
+                    <h5>1. Objeto</h5>
+                    <p>Este site tem caráter informativo e apresenta a empresa, seus dados cadastrais e canais de contato. Nenhuma informação aqui contida constitui oferta vinculante de compra ou venda de imóveis.</p>
+
+                    <h5>2. Propriedade intelectual</h5>
+                    <p>Todo o conteúdo (textos, imagens, logotipos, ícones e design) é de propriedade da Hernandes Administradora de Bens Próprios LTDA ou licenciado por terceiros. É proibida a reprodução sem autorização prévia.</p>
+
+                    <h5>3. Uso adequado</h5>
+                    <p>Você se compromete a utilizar o site apenas para fins lícitos, não praticando atos que possam danificar, sobrecarregar ou desativar qualquer funcionalidade. É vedado o uso de robôs, scrapers ou qualquer meio automatizado para extrair dados.</p>
+
+                    <h5>4. Links externos</h5>
+                    <p>Este site pode conter links para serviços de terceiros (Google Maps, WhatsApp, etc.). Não nos responsabilizamos pelo conteúdo ou práticas de privacidade desses sites.</p>
+
+                    <h5>5. Isenção de garantias</h5>
+                    <p>As informações são fornecidas "como estão", sem garantias de disponibilidade contínua ou ausência de erros. A Hernandes Imobiliária não se responsabiliza por decisões tomadas com base no conteúdo do site.</p>
+
+                    <h5>6. Privacidade</h5>
+                    <p>O uso de dados pessoais é regido pela nossa <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidade" data-bs-dismiss="modal">Política de Privacidade</a>.</p>
+
+                    <h5>7. Disposições gerais</h5>
+                    <p>Estes termos são regidos pelas leis brasileiras. Qualquer disputa será dirimida no foro da comarca de Manaus/AM, com exclusão de qualquer outro.</p>
+                    <p>Reservamo-nos o direito de modificar estes termos a qualquer momento, publicando a versão atualizada neste local.</p>
+
+                    <p class="mt-4"><em>Para esclarecimentos, utilize nossos canais de contato.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Concordo</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Botão Voltar ao Topo -->
     <button class="btn-voltar-topo" id="btnVoltarTopo" title="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
@@ -1213,7 +1366,7 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS - Animate On Scroll -->
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
@@ -1254,6 +1407,18 @@
                 if (window.innerWidth < 992) bsCollapse.hide();
             });
         });
+
+        // Corrige referência cruzada entre modais (fechar um e abrir outro)
+        const modalPrivacidade = document.getElementById('modalPrivacidade');
+        const modalTermos = document.getElementById('modalTermos');
+        if (modalPrivacidade && modalTermos) {
+            modalPrivacidade.addEventListener('hidden.bs.modal', function () {
+                // Remove backdrop residual se houver
+                document.body.classList.remove('modal-open');
+                const backdrops = document.querySelectorAll('.modal-backdrop');
+                backdrops.forEach(b => b.remove());
+            });
+        }
     </script>
 </body>
 </html>
